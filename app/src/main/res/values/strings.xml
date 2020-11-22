@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Museum Tickets</string>
+    <string name="toast">Maximum of 5 tickets for each!</string>
 </resources>

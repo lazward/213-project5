@@ -8,6 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ *
+ * @author Aarif Razak ahr58, Julian Lee jl2203
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     TextView box1;

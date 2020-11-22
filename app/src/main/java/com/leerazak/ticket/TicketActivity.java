@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+/**
+ *
+ * @author Aarif Razak ahr58, Julian Lee jl2203
+ *
+ */
 
 public class TicketActivity extends AppCompatActivity{
     TextView ticket_text;
@@ -36,6 +42,8 @@ public class TicketActivity extends AppCompatActivity{
 
             }
 
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.toast, Toast.LENGTH_SHORT) ;
+            toast.show() ;
 
         }
 
