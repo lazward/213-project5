@@ -107,7 +107,7 @@ public class TicketActivity extends AppCompatActivity{
 
             }
 
-
+    //Toast testing
             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast, Toast.LENGTH_SHORT) ;
             toast.show() ;
 
