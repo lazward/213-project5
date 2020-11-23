@@ -1,6 +1,7 @@
 package com.leerazak.ticket;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,18 +30,83 @@ public class TicketActivity extends AppCompatActivity{
 
             //Generate an intent, and check from where we got the input from
             Intent intent = getIntent();
-            String temp = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-            if(temp.equalsIgnoreCase("hello from main!")){
+            int temp = intent.getIntExtra(MainActivity.EXTRA_MESSAGE, 5);
+
+            if(temp == 5){
                 //testing where we got the button from
                 TextView textView = findViewById(R.id.ticket_text);
-                textView.setText(temp);
-            }else if(temp.equals("LOCATION1 TEST")){
+                textView.setText(String.valueOf(temp));
+            }else if(temp == 1){
                 TextView textView = findViewById(R.id.ticket_text);
-                textView.setText(temp);
+                textView.setText(String.valueOf(temp));
                 ImageView picture = findViewById(R.id.ticket_picture);
                 picture.setImageResource(R.drawable.pogchamp);
+                //set link for the user to click
+                picture.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.metmuseum.org/"));
+                        startActivity(intent);
+                    }
+                });
+
+            }else if (temp == 2){
+                TextView textView = findViewById(R.id.ticket_text);
+                textView.setText(String.valueOf(temp));
+                ImageView picture = findViewById(R.id.ticket_picture);
+                picture.setImageResource(R.drawable.tired);
+                //set link for the user to click
+                picture.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.moma.org"));
+                        startActivity(intent);
+                    }
+                });
+
+
+            }else if (temp == 3){
+                TextView textView = findViewById(R.id.ticket_text);
+                textView.setText(String.valueOf(temp));
+                ImageView picture = findViewById(R.id.ticket_picture);
+                picture.setImageResource(R.drawable.cayde);
+                //set link for the user to click
+                picture.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.amnh.org"));
+                        startActivity(intent);
+                    }
+                });
+
+            }else if (temp == 4){
+                TextView textView = findViewById(R.id.ticket_text);
+                textView.setText(String.valueOf(temp));
+                ImageView picture = findViewById(R.id.ticket_picture);
+                picture.setImageResource(R.drawable.actually_crying);
+                //set link for the user to click
+                picture.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.mcny.org"));
+                        startActivity(intent);
+                    }
+                });
 
             }
+
 
             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast, Toast.LENGTH_SHORT) ;
             toast.show() ;

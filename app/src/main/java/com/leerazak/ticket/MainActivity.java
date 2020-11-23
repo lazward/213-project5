@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView box1;
+    TextView box1, box2, box3, box4;
     //TESTING
 
     Button main_ticket_button;
@@ -39,6 +39,28 @@ public class MainActivity extends AppCompatActivity {
                 locationOne();
             }
         });
+        //Every other selection
+        box2 = (TextView) findViewById(R.id.main_loc_2);
+        box2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationTwo();
+            }
+        });
+        box3 = (TextView) findViewById(R.id.main_loc_3);
+        box3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationThree();
+            }
+        });
+        box4 = (TextView) findViewById(R.id.main_loc_4);
+        box4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationFour();
+            }
+        });
         //Testing communication
         main_ticket_button = (Button) findViewById(R.id.main_ticket_button);
         main_ticket_button.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +75,38 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void launchTicketActivity(){
+        //test
         Intent intent = new Intent(this, TicketActivity.class);
-        String message = "hello from main!";
+        int message = 5;
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 
     }
     public void locationOne(){
         Intent intent = new Intent(this, TicketActivity.class);
-        String message = "LOCATION1 TEST";
+        int message = 1;
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
+
+    }
+    public void locationTwo(){
+        Intent intent = new Intent(this, TicketActivity.class);
+        int message = 2;
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
+
+    }
+    public void locationThree(){
+        Intent intent = new Intent(this, TicketActivity.class);
+        int message = 3;
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+    public void locationFour(){
+        Intent intent = new Intent(this, TicketActivity.class);
+        int message = 4;
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 

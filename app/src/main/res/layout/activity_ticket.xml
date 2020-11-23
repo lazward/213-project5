@@ -16,7 +16,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="167dp"
-        android:text="TEST"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_button"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +100,7 @@
         android:layout_marginEnd="142dp"
         android:layout_marginRight="142dp"
         android:layout_marginBottom="17dp"
+        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/main_num1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
