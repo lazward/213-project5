@@ -41,6 +41,8 @@ public class TicketActivity extends AppCompatActivity{
                 textView.setText(String.valueOf(temp));
                 ImageView picture = findViewById(R.id.ticket_picture);
                 picture.setImageResource(R.drawable.pogchamp);
+                TextView nameText = findViewById(R.id.museumName) ;
+                nameText.setText(R.string.met) ;
                 //set link for the user to click
                 picture.setOnClickListener(new View.OnClickListener() {
 
@@ -58,6 +60,8 @@ public class TicketActivity extends AppCompatActivity{
                 textView.setText(String.valueOf(temp));
                 ImageView picture = findViewById(R.id.ticket_picture);
                 picture.setImageResource(R.drawable.tired);
+                TextView nameText = findViewById(R.id.museumName) ;
+                nameText.setText(R.string.moma) ;
                 //set link for the user to click
                 picture.setOnClickListener(new View.OnClickListener() {
 
@@ -76,6 +80,8 @@ public class TicketActivity extends AppCompatActivity{
                 textView.setText(String.valueOf(temp));
                 ImageView picture = findViewById(R.id.ticket_picture);
                 picture.setImageResource(R.drawable.cayde);
+                TextView nameText = findViewById(R.id.museumName) ;
+                nameText.setText(R.string.amnh) ;
                 //set link for the user to click
                 picture.setOnClickListener(new View.OnClickListener() {
 
@@ -93,6 +99,8 @@ public class TicketActivity extends AppCompatActivity{
                 textView.setText(String.valueOf(temp));
                 ImageView picture = findViewById(R.id.ticket_picture);
                 picture.setImageResource(R.drawable.actually_crying);
+                TextView nameText = findViewById(R.id.museumName) ;
+                nameText.setText(R.string.mcny) ;
                 //set link for the user to click
                 picture.setOnClickListener(new View.OnClickListener() {
 

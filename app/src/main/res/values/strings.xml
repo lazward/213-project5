@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Museum Tickets</string>
     <string name="toast">Maximum of 5 tickets for each!</string>
+    <string name="met">Metropolitan Museum of Art</string>
+    <string name="moma">Museum of Modern Art</string>
+    <string name="amnh">American Museum of Natural History</string>
+    <string name="mcny">Museum of the City of New York</string>
 </resources>
