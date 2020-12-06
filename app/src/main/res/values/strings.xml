@@ -2,7 +2,11 @@
     <string name="app_name">Museum Tickets</string>
     <string name="toast">Maximum of 5 tickets for each!</string>
     <string name="met">Metropolitan Museum of Art</string>
+    <string name="metURL">https://www.metmuseum.org/</string>
     <string name="moma">Museum of Modern Art</string>
+    <string name="momaURL">https://www.moma.org</string>
     <string name="amnh">American Museum of Natural History</string>
+    <string name="amnhURL">https://www.amnh.org</string>
     <string name="mcny">Museum of the City of New York</string>
+    <string name="mcnyURL">https://www.mcny.org</string>
 </resources>

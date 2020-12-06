@@ -32,6 +32,52 @@ public class TicketActivity extends AppCompatActivity{
             Intent intent = getIntent();
             int temp = intent.getIntExtra(MainActivity.EXTRA_MESSAGE, 5);
 
+            TextView textView = findViewById(R.id.ticket_text) ;
+            textView.setText(String.valueOf(temp)) ;
+            ImageView picture = findViewById(R.id.ticket_picture) ;
+            TextView nameText = findViewById(R.id.museumName) ;
+            String url ;
+
+            switch (temp) {
+
+                case 1:
+                    picture.setImageResource(R.drawable.pogchamp) ;
+                    nameText.setText(R.string.met) ;
+                    url = getResources().getString(R.string.metURL) ;
+                    break ;
+                case 2:
+                    picture.setImageResource(R.drawable.tired) ;
+                    nameText.setText(R.string.moma) ;
+                    url = getResources().getString(R.string.momaURL) ;
+                    break ;
+                case 3:
+                    picture.setImageResource(R.drawable.cayde) ;
+                    nameText.setText(R.string.amnh) ;
+                    url = getResources().getString(R.string.amnhURL) ;
+                    break ;
+                case 4:
+                    picture.setImageResource(R.drawable.actually_crying) ;
+                    nameText.setText(R.string.mcny) ;
+                    url = getResources().getString(R.string.mcnyURL) ;
+                    break ;
+                default: // This shouldn't ever run
+                    throw new IllegalStateException("Unexpected value: " + temp);
+            }
+
+            final String finalUrl = url;
+            picture.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.setData(Uri.parse(finalUrl));
+                    startActivity(intent);
+                }
+            });
+
+            /*
+
             if(temp == 5){
                 //testing where we got the button from
                 TextView textView = findViewById(R.id.ticket_text);
@@ -114,6 +160,9 @@ public class TicketActivity extends AppCompatActivity{
                 });
 
             }
+
+            */
+
 
     //Toast testing
             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast, Toast.LENGTH_SHORT) ;
