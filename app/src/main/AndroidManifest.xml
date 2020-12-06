@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TicketActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
