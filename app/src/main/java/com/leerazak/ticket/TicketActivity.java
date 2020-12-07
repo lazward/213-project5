@@ -40,8 +40,8 @@ public class TicketActivity extends AppCompatActivity{
             Intent intent = getIntent();
             int temp = intent.getIntExtra(MainActivity.EXTRA_MESSAGE, 5);
 
-            TextView textView = findViewById(R.id.ticket_text) ;
-            textView.setText(String.valueOf(temp)) ;
+            //TextView textView = findViewById(R.id.ticket_text) ;
+            //textView.setText(String.valueOf(temp)) ;
             ImageView picture = findViewById(R.id.ticket_picture) ;
 
             TextView nameText = findViewById(R.id.museumName) ;
@@ -95,7 +95,7 @@ public class TicketActivity extends AppCompatActivity{
                     stuText.append( " $" +  Integer.toString(mcnyPrices[0]));
                     aduText.append( " $" + Integer.toString(mcnyPrices[1]));
                     senText.append( " $" + Integer.toString(mcnyPrices[2]));
-                    
+
                     break ;
                 default: // This shouldn't ever run
                     throw new IllegalStateException("Unexpected value: " + temp);
