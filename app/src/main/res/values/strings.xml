@@ -9,4 +9,13 @@
     <string name="amnhURL">https://www.amnh.org</string>
     <string name="mcny">Museum of the City of New York</string>
     <string name="mcnyURL">https://www.mcny.org</string>
+
+    <!-- Spinner resources -->
+    <string-array name= "number_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>

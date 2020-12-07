@@ -5,8 +5,10 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class TicketActivity extends AppCompatActivity{
     TextView t1;
     ImageView photo;
     int num1, num2;
+    //Spinner childSpinner, adultSpinner;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,36 @@ public class TicketActivity extends AppCompatActivity{
                     startActivity(intent);
                 }
             });
+
+            //Select spinner options
+
+            Spinner C_spinner = (Spinner) findViewById(R.id.studentSpinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+            ArrayAdapter<String> C_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
+// Specify the layout to use when the list of choices appears
+            C_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+            C_spinner.setAdapter(C_adapter);
+
+            Spinner P_spinner = (Spinner) findViewById(R.id.adultSpinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+            ArrayAdapter<String> P_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
+// Specify the layout to use when the list of choices appears
+            P_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+           P_spinner.setAdapter(P_adapter);
+
+            Spinner S_spinner = (Spinner) findViewById(R.id.seniorSpinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+            ArrayAdapter<String> S_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
+// Specify the layout to use when the list of choices appears
+            S_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+            S_spinner.setAdapter(S_adapter);
+
+
+
+
 
             /*
 
@@ -171,11 +204,12 @@ public class TicketActivity extends AppCompatActivity{
         }
 
         //dummy stuff to test input and output stuff
+    /*
     public boolean getNumbers()
     {
 
         // defining the edit text 1 to e1
-        e1 = (EditText)findViewById(R.id.main_num1);
+        e1 = (EditText)findViewById(R.id.studentTixNum);
 
         // defining the edit text 2 to e2
         e2 = (EditText)findViewById(R.id.main_num2);
@@ -219,5 +253,5 @@ public class TicketActivity extends AppCompatActivity{
             int sum = num1 + num2;
             t1.setText(Integer.toString(sum));
         }
-    }
+    }*/
 }
