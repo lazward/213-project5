@@ -7,30 +7,100 @@
 
     <ImageView
         android:id="@+id/ticket_picture"
-        android:layout_width="324dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="331dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="47dp"
         android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/studentText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/museumName"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <Spinner
+        android:id="@+id/studentSpinner"
+        android:layout_width="117dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/adultSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/studentText"
+        app:layout_constraintTop_toBottomOf="@+id/ticket_picture" />
+
     <TextView
         android:id="@+id/studentText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="133dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="8dp"
         android:text="Student Tickets "
         app:layout_constraintBottom_toTopOf="@+id/adultText"
         app:layout_constraintEnd_toStartOf="@+id/studentSpinner"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticket_picture" />
+
+    <TextView
+        android:id="@+id/adultText"
+        android:layout_width="136dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="25dp"
+        android:text="Adult Tickets "
+        app:layout_constraintBottom_toTopOf="@+id/seniorText"
+        app:layout_constraintEnd_toEndOf="@+id/studentText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/studentText"
+        app:layout_constraintTop_toBottomOf="@+id/studentText" />
+
+    <TextView
+        android:id="@+id/seniorText"
+        android:layout_width="132dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="96dp"
+        android:text="Senior Tickets"
+        app:layout_constraintBottom_toTopOf="@+id/tixPrice"
+        app:layout_constraintEnd_toEndOf="@+id/adultText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/adultText"
+        app:layout_constraintTop_toBottomOf="@+id/adultText"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <Spinner
+        android:id="@+id/adultSpinner"
+        android:layout_width="127dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/seniorSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/studentSpinner"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/studentSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/studentSpinner" />
+
+    <Spinner
+        android:id="@+id/seniorSpinner"
+        android:layout_width="133dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_button"
+        app:layout_constraintEnd_toEndOf="@+id/adultSpinner"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toEndOf="@+id/seniorText"
+        app:layout_constraintStart_toStartOf="@+id/adultSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/adultSpinner"
+        app:layout_constraintVertical_bias="0.978" />
 
     <Button
         android:id="@+id/main_button"
@@ -42,98 +112,36 @@
         android:text="CALCULATE COST"
         app:layout_constraintBottom_toTopOf="@+id/tixPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seniorText" />
-
-    <TextView
-        android:id="@+id/seniorText"
-        android:layout_width="89dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="96dp"
-        android:text="Senior Tickets"
-        app:layout_constraintBottom_toTopOf="@+id/tixPrice"
-        app:layout_constraintEnd_toStartOf="@+id/seniorSpinner"
-        app:layout_constraintStart_toStartOf="@+id/adultText"
-        app:layout_constraintTop_toBottomOf="@+id/adultText"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/adultText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginRight="108dp"
-        android:layout_marginBottom="17dp"
-        android:text="Adult Tickets "
-        app:layout_constraintBottom_toTopOf="@+id/seniorText"
-        app:layout_constraintEnd_toStartOf="@+id/adultSpinner"
-        app:layout_constraintStart_toStartOf="@+id/studentText"
-        app:layout_constraintTop_toBottomOf="@+id/studentText" />
-
-    <TextView
-        android:id="@+id/museumName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:layout_marginBottom="21dp"
-        android:text="MuseumName"
-        app:layout_constraintBottom_toTopOf="@+id/ticket_picture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/adultSpinner"
-        android:layout_width="87dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/studentSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/studentSpinner" />
-
-    <Spinner
-        android:id="@+id/studentSpinner"
-        android:layout_width="89dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/adultSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/studentText"
-        app:layout_constraintTop_toBottomOf="@+id/ticket_picture" />
-
-    <TextView
-        android:id="@+id/tixPrice"
-        android:layout_width="159dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="10dp"
-        android:hint="Ticket Price"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/salesTax"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_button" />
 
     <TextView
         android:id="@+id/salesTax"
         android:layout_width="159dp"
         android:layout_height="37dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginBottom="15dp"
         android:hint="Sales Tax"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/totalPrice"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tixPrice" />
+
+    <TextView
+        android:id="@+id/tixPrice"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="18dp"
+        android:hint="Ticket Price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/salesTax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_button" />
 
     <TextView
         android:id="@+id/totalPrice"
@@ -144,23 +152,25 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salesTax" />
+        app:layout_constraintTop_toBottomOf="@+id/salesTax"
+        app:layout_constraintVertical_bias="0.202" />
 
-    <Spinner
-        android:id="@+id/seniorSpinner"
-        android:layout_width="109dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="66dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="19dp"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
-        app:layout_constraintEnd_toEndOf="@+id/adultSpinner"
-        app:layout_constraintStart_toEndOf="@+id/seniorText"
-        app:layout_constraintTop_toBottomOf="@+id/adultSpinner"
-        app:layout_constraintVertical_bias="1.0" />
+    <TextView
+        android:id="@+id/museumName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="24dp"
+        android:text="MuseumName"
+        app:layout_constraintBottom_toTopOf="@+id/ticket_picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

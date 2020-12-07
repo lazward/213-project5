@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Testing communication
+        /*
         main_ticket_button = (Button) findViewById(R.id.main_ticket_button);
         main_ticket_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 launchTicketActivity();
             }
         });
+        */
+
     }
 
     //TESTING
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
     public void locationOne(){
         Intent intent = new Intent(this, TicketActivity.class);
         int message = 1;
