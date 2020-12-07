@@ -44,27 +44,28 @@ public class TicketActivity extends AppCompatActivity{
             switch (temp) {
 
                 case 1:
-                    picture.setImageResource(R.drawable.pogchamp) ;
+                    picture.setImageResource(R.drawable.met) ;
                     nameText.setText(R.string.met) ;
                     url = getResources().getString(R.string.metURL) ;
                     break ;
                 case 2:
-                    picture.setImageResource(R.drawable.tired) ;
+                    picture.setImageResource(R.drawable.moma) ;
                     nameText.setText(R.string.moma) ;
                     url = getResources().getString(R.string.momaURL) ;
                     break ;
                 case 3:
-                    picture.setImageResource(R.drawable.cayde) ;
+                    picture.setImageResource(R.drawable.amnh) ;
                     nameText.setText(R.string.amnh) ;
                     url = getResources().getString(R.string.amnhURL) ;
                     break ;
                 case 4:
-                    picture.setImageResource(R.drawable.actually_crying) ;
+                    picture.setImageResource(R.drawable.mcny) ;
                     nameText.setText(R.string.mcny) ;
                     url = getResources().getString(R.string.mcnyURL) ;
                     break ;
                 default: // This shouldn't ever run
                     throw new IllegalStateException("Unexpected value: " + temp);
+
             }
 
             final String finalUrl = url;
