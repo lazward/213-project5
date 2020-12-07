@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -31,6 +32,8 @@ public class TicketActivity extends AppCompatActivity{
     final int[] amnhPrices = {18, 23, 18};
     final int[] mcnyPrices = {14, 20, 14};
 
+    final double nycTax = .08875 ;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -44,7 +47,7 @@ public class TicketActivity extends AppCompatActivity{
             textView.setText(String.valueOf(temp)) ;
             ImageView picture = findViewById(R.id.ticket_picture) ;
 
-            TextView nameText = findViewById(R.id.museumName) ;
+            final TextView nameText = findViewById(R.id.museumName) ;
             TextView stuText = findViewById(R.id.studentText);
             TextView aduText = findViewById(R.id.adultText);
             TextView senText = findViewById(R.id.seniorText);
@@ -116,7 +119,7 @@ public class TicketActivity extends AppCompatActivity{
 
             //Select spinner options
 
-            Spinner C_spinner = (Spinner) findViewById(R.id.studentSpinner);
+            final Spinner C_spinner = (Spinner) findViewById(R.id.studentSpinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> C_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
 // Specify the layout to use when the list of choices appears
@@ -124,7 +127,7 @@ public class TicketActivity extends AppCompatActivity{
 // Apply the adapter to the spinner
             C_spinner.setAdapter(C_adapter);
 
-            Spinner P_spinner = (Spinner) findViewById(R.id.adultSpinner);
+            final Spinner P_spinner = (Spinner) findViewById(R.id.adultSpinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> P_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
 // Specify the layout to use when the list of choices appears
@@ -132,7 +135,7 @@ public class TicketActivity extends AppCompatActivity{
 // Apply the adapter to the spinner
            P_spinner.setAdapter(P_adapter);
 
-            Spinner S_spinner = (Spinner) findViewById(R.id.seniorSpinner);
+            final Spinner S_spinner = (Spinner) findViewById(R.id.seniorSpinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> S_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
 // Specify the layout to use when the list of choices appears
@@ -140,7 +143,53 @@ public class TicketActivity extends AppCompatActivity{
 // Apply the adapter to the spinner
             S_spinner.setAdapter(S_adapter);
 
+            Button button = (Button) findViewById(R.id.main_button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                    TextView tixPrice = findViewById(R.id.tixPrice) ;
+                    TextView salesTax = findViewById(R.id.salesTax) ;
+                    TextView totalPrice = findViewById(R.id.totalPrice) ;
+
+                    int student, adult, senior ;
+
+                    if (nameText.getText().toString().equals(getResources().getString(R.string.met))) {
+
+                        student = Integer.parseInt(C_spinner.getSelectedItem().toString()) * metPrices[0] ;
+                        adult = Integer.parseInt(P_spinner.getSelectedItem().toString()) * metPrices[1] ;
+                        senior = Integer.parseInt(S_spinner.getSelectedItem().toString()) * metPrices[2] ;
+
+                    } else if (nameText.getText().toString().equals(getResources().getString(R.string.moma))) {
+
+                        student = Integer.parseInt(C_spinner.getSelectedItem().toString()) * momaPrices[0] ;
+                        adult = Integer.parseInt(P_spinner.getSelectedItem().toString()) * momaPrices[1] ;
+                        senior = Integer.parseInt(S_spinner.getSelectedItem().toString()) * momaPrices[2] ;
+
+                    } else if (nameText.getText().toString().equals(getResources().getString(R.string.amnh))) {
+
+                        student = Integer.parseInt(C_spinner.getSelectedItem().toString()) * amnhPrices[0] ;
+                        adult = Integer.parseInt(P_spinner.getSelectedItem().toString()) * amnhPrices[1] ;
+                        senior = Integer.parseInt(S_spinner.getSelectedItem().toString()) * amnhPrices[2] ;
+
+                    } else { // MCNY
+
+                        student = Integer.parseInt(C_spinner.getSelectedItem().toString()) * mcnyPrices[0] ;
+                        adult = Integer.parseInt(P_spinner.getSelectedItem().toString()) * mcnyPrices[1] ;
+                        senior = Integer.parseInt(S_spinner.getSelectedItem().toString()) * mcnyPrices[2] ;
+
+                    }
+
+                    int sum = student + adult + senior;
+                    double tax =  sum * nycTax ;
+                    double total = sum + tax ;
+
+                    tixPrice.setText("$" + Integer.toString(sum));
+                    salesTax.setText("$" + String.format("%.2f", tax));
+                    totalPrice.setText("$" + String.format("%.2f", total)) ;
+
+                }
+            });
 
 
 
