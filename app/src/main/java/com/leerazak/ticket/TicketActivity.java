@@ -24,7 +24,12 @@ public class TicketActivity extends AppCompatActivity{
     TextView t1;
     ImageView photo;
     int num1, num2;
-    //Spinner childSpinner, adultSpinner;
+
+    //Final arrays represent costs per museum, first index is the students, second is adult, third is senior.
+    final int[] metPrices = {12, 25, 17};
+    final int[] momaPrices = {14, 25, 18};
+    final int[] amnhPrices = {18, 23, 18};
+    final int[] mcnyPrices = {14, 20, 14};
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,13 @@ public class TicketActivity extends AppCompatActivity{
             TextView textView = findViewById(R.id.ticket_text) ;
             textView.setText(String.valueOf(temp)) ;
             ImageView picture = findViewById(R.id.ticket_picture) ;
+
             TextView nameText = findViewById(R.id.museumName) ;
+            TextView stuText = findViewById(R.id.studentText);
+            TextView aduText = findViewById(R.id.adultText);
+            TextView senText = findViewById(R.id.seniorText);
+
+
             String url ;
 
             switch (temp) {
@@ -47,21 +58,44 @@ public class TicketActivity extends AppCompatActivity{
                     picture.setImageResource(R.drawable.met) ;
                     nameText.setText(R.string.met) ;
                     url = getResources().getString(R.string.metURL) ;
+                    //Update Text Fields
+                    stuText.append( " $" +  Integer.toString(metPrices[0]));
+                    aduText.append( " $" + Integer.toString(metPrices[1]));
+                    senText.append( " $" + Integer.toString(metPrices[2]));
+
+
                     break ;
                 case 2:
                     picture.setImageResource(R.drawable.moma) ;
                     nameText.setText(R.string.moma) ;
                     url = getResources().getString(R.string.momaURL) ;
+
+                    //Update Text Fields
+                    stuText.append( " $" +  Integer.toString(momaPrices[0]));
+                    aduText.append( " $" + Integer.toString(momaPrices[1]));
+                    senText.append( " $" + Integer.toString(momaPrices[2]));
+
+
                     break ;
                 case 3:
                     picture.setImageResource(R.drawable.amnh) ;
                     nameText.setText(R.string.amnh) ;
                     url = getResources().getString(R.string.amnhURL) ;
+
+                    stuText.append( " $" +  Integer.toString(amnhPrices[0]));
+                    aduText.append( " $" + Integer.toString(amnhPrices[1]));
+                    senText.append( " $" + Integer.toString(amnhPrices[2]));
+
                     break ;
                 case 4:
                     picture.setImageResource(R.drawable.mcny) ;
                     nameText.setText(R.string.mcny) ;
                     url = getResources().getString(R.string.mcnyURL) ;
+
+                    stuText.append( " $" +  Integer.toString(mcnyPrices[0]));
+                    aduText.append( " $" + Integer.toString(mcnyPrices[1]));
+                    senText.append( " $" + Integer.toString(mcnyPrices[2]));
+                    
                     break ;
                 default: // This shouldn't ever run
                     throw new IllegalStateException("Unexpected value: " + temp);
