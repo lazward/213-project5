@@ -118,7 +118,7 @@ public class TicketActivity extends AppCompatActivity{
             });
 
             //Select spinner options
-
+            //StudentSpinner
             final Spinner C_spinner = (Spinner) findViewById(R.id.studentSpinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> C_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
@@ -127,22 +127,21 @@ public class TicketActivity extends AppCompatActivity{
 // Apply the adapter to the spinner
             C_spinner.setAdapter(C_adapter);
 
+
+            //Adult Spinner
             final Spinner P_spinner = (Spinner) findViewById(R.id.adultSpinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> P_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
-// Specify the layout to use when the list of choices appears
             P_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
            P_spinner.setAdapter(P_adapter);
 
+
+           //Senior Spinner
             final Spinner S_spinner = (Spinner) findViewById(R.id.seniorSpinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<String> S_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.number_array));
-// Specify the layout to use when the list of choices appears
             S_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
             S_spinner.setAdapter(S_adapter);
 
+            //Update the prices as needed
             Button button = (Button) findViewById(R.id.main_button);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -195,7 +194,7 @@ public class TicketActivity extends AppCompatActivity{
 
 
 
-    //Toast testing
+
             Toast toast = Toast.makeText(getApplicationContext(), R.string.toast, Toast.LENGTH_SHORT) ;
             toast.show() ;
 
