@@ -4,9 +4,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView box1, box2, box3, box4;
     //TESTING
+    ListView museumList;
 
     Button main_ticket_button;
     //this extra_message allows communication between both activities
@@ -31,50 +39,54 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //important stuff ^^
 
-        //Based on the first museum selection
-        box1 = (TextView) findViewById(R.id.main_loc_1);
-        box1.setOnClickListener(new View.OnClickListener() {
+
+
+
+        //ListView
+        museumList = (ListView) findViewById(R.id.annoyingList);
+
+        ArrayList<String> entries = new ArrayList<String>();
+
+        entries.add(getResources().getString(R.string.met));
+        entries.add(getResources().getString(R.string.moma));
+        entries.add(getResources().getString(R.string.amnh));
+        entries.add(getResources().getString(R.string.mcny));
+
+
+        ArrayAdapter listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, entries);
+
+        museumList.setAdapter(listAdapter);
+
+        museumList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                locationOne();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:
+                        locationOne();
+
+                        break;
+                    case 1:
+                        locationTwo();
+                        break;
+                    case 2:
+                        locationThree();
+                        break;
+                    case 3:
+                        locationFour();
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected Selection " + i);
+                }
             }
         });
-        //Every other selection
-        box2 = (TextView) findViewById(R.id.main_loc_2);
-        box2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                locationTwo();
-            }
-        });
-        box3 = (TextView) findViewById(R.id.main_loc_3);
-        box3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                locationThree();
-            }
-        });
-        box4 = (TextView) findViewById(R.id.main_loc_4);
-        box4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                locationFour();
-            }
-        });
+
+
 
     }
 
     //TESTING
 
 
-    public void launchTicketActivity(){
-        //test
-        Intent intent = new Intent(this, TicketActivity.class);
-        int message = 5;
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-
-    }
 
     public void locationOne(){
         Intent intent = new Intent(this, TicketActivity.class);
