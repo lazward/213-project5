@@ -61,16 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 locationFour();
             }
         });
-        //Testing communication
-        /*
-        main_ticket_button = (Button) findViewById(R.id.main_ticket_button);
-        main_ticket_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                launchTicketActivity();
-            }
-        });
-        */
 
     }
 
@@ -116,13 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    /*public void launchTicketActivity(View view){
-        Intent intent = new Intent(this, TicketActivity.class);
-        String message = "hello from main!";
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }*/
-
 
 
 }
