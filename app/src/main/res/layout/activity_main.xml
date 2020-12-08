@@ -12,16 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="77dp"
         android:layout_marginLeft="77dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="125dp"
         android:layout_marginEnd="77dp"
         android:layout_marginRight="77dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="8dp"
         android:text="NYC Museum Locations"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/main_loc_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/main_loc_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_title" />
 
