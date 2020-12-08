@@ -57,7 +57,7 @@
         android:text="Adult Tickets "
         app:layout_constraintBottom_toTopOf="@+id/seniorText"
         app:layout_constraintEnd_toEndOf="@+id/studentText"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/studentText"
         app:layout_constraintTop_toBottomOf="@+id/studentText" />
 
@@ -70,7 +70,7 @@
         android:text="Senior Tickets"
         app:layout_constraintBottom_toTopOf="@+id/tixPrice"
         app:layout_constraintEnd_toEndOf="@+id/adultText"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/adultText"
         app:layout_constraintTop_toBottomOf="@+id/adultText"
         app:layout_constraintVertical_bias="0.333" />
@@ -83,7 +83,7 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/seniorSpinner"
         app:layout_constraintEnd_toEndOf="@+id/studentSpinner"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/studentSpinner"
         app:layout_constraintTop_toBottomOf="@+id/studentSpinner" />
 
@@ -96,7 +96,7 @@
         android:layout_marginBottom="19dp"
         app:layout_constraintBottom_toTopOf="@+id/main_button"
         app:layout_constraintEnd_toEndOf="@+id/adultSpinner"
-        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/seniorText"
         app:layout_constraintStart_toStartOf="@+id/adultSpinner"
         app:layout_constraintTop_toBottomOf="@+id/adultSpinner"
@@ -117,42 +117,39 @@
         app:layout_constraintTop_toBottomOf="@+id/seniorText" />
 
     <TextView
-        android:id="@+id/salesTax"
-        android:layout_width="159dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="15dp"
-        android:hint="Sales Tax"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/totalPrice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tixPrice" />
-
-    <TextView
         android:id="@+id/tixPrice"
         android:layout_width="159dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="18dp"
-        android:hint="Ticket Price"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/salesTax"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_button" />
+
+    <TextView
+        android:id="@+id/salesTax"
+        android:layout_width="159dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/totalPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tixPrice" />
 
     <TextView
         android:id="@+id/totalPrice"
         android:layout_width="159dp"
         android:layout_height="37dp"
         android:layout_marginBottom="25dp"
-        android:hint="Total Price"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.841"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salesTax"
         app:layout_constraintVertical_bias="0.202" />
@@ -171,6 +168,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ticketCostText"
+        android:layout_width="134dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="Ticket Cost: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/salesTaxText"
+        app:layout_constraintEnd_toStartOf="@+id/tixPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_button" />
+
+    <TextView
+        android:id="@+id/salesTaxText"
+        android:layout_width="134dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="27dp"
+        android:text="Sales Tax:  "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/totalCostText"
+        app:layout_constraintEnd_toStartOf="@+id/tixPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_button" />
+
+    <TextView
+        android:id="@+id/totalCostText"
+        android:layout_width="134dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="40dp"
+        android:text="Total Cost: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tixPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_button" />
 
 
 </android.support.constraint.ConstraintLayout>
