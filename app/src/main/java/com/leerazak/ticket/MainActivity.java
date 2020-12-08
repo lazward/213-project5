@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -63,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 switch (i){
                     case 0:
                         locationOne();
-
                         break;
                     case 1:
                         locationTwo();
@@ -75,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
                         locationFour();
                         break;
                     default:
-                        throw new IllegalStateException("Unexpected Selection " + i);
+                        Toast toast = Toast.makeText(getApplicationContext(), R.string.error, Toast.LENGTH_SHORT) ;
+                        toast.show() ;
                 }
             }
         });

@@ -9,6 +9,7 @@
     <string name="amnhURL">https://www.amnh.org</string>
     <string name="mcny">Museum of the City of New York</string>
     <string name="mcnyURL">https://www.mcny.org</string>
+    <string name="error">This should never appear</string>
 
     <!-- Spinner resources -->
     <string-array name= "number_array">
